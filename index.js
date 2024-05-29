@@ -37,4 +37,71 @@ const areaDeCoronaCircular = (r1,r2) =>  Math.PI*(Math.pow(r2,2)-Math.pow(r1,2))
 
 const ultimaCifra = (x) => Math.abs(x%10)
 
-console.log(ultimaCifra(8965))
+/*
+    Ejercicio 1.6.1. Definir la función maxTres tal que (maxTres x y z) es el máximo de x, y y
+    z. Por ejemplo,
+
+    maxTres 6 2 4 == 6
+    maxTres 6 7 4 == 7
+    maxTres 6 7 9 == 9
+*/
+const maxTres = (x,y,z) => Math.max(x,y,z)
+
+/*
+Ejercicio 1.7.1. Definir la función xor1 que calcule la disyunción excluyente a partir de la tabla
+de verdad. Usar 4 ecuaciones, una por cada línea de la tabla.
+*/
+
+const xor1 = (bol1, bol2) =>{
+    if ( !bol1  && !bol2 ) { return false }
+    if (  bol1  &&  bol2 ) { return false }
+    if ( !bol1  &&  bol2 ) { return true  }
+    if (  bol1  && !bol2 ) { return true  }
+}
+
+/*
+Ejercicio 1.7.2. Definir la función xor2 que calcule la disyunción excluyente a partir de la tabla
+de verdad y patrones. Usar 2 ecuaciones, una por cada valor del primer argumento.
+*/
+
+const xor2 = ( bol1 , bol2 ) =>
+    ( !bol1  && !bol2 ) 
+        ? false 
+        : (  bol1  &&  bol2 ) 
+            ? false 
+            : true
+
+
+/* 
+    Ejercicio 1.7.3. Definir la función xor3 que calcule la disyunción excluyente a partir de la
+    disyunción (||), conjunción (&&) y negación (not). Usar 1 ecuación.
+ */
+const xor3 = (bol1, bol2) => !bol1 && !bol2 || bol1 && bol2 ? false : true
+
+
+/* 
+    Ejercicio 1.7.4. Definir la función xor4 que calcule la disyunción excluyente a partir de desigualdad (!=). Usar 1 ecuación.
+*/
+
+const xor4 = (bol1, bol2) => bol1 != bol2
+
+/*
+    Ejercicio 1.8.1. Definir la función rota1 tal que (rota1 xs) es la lista obtenida poniendo el primer elemento de xs al final de la lista. 
+    Por ejemplo, rota1 [3,2,5,7] == [2,5,7,3]
+*/
+
+function rota1 (xs) {
+    if (xs.length === 0) {
+      return xs; 
+    }
+
+    const [firstElement, ...restOfElements] = xs;
+    return [...restOfElements, firstElement];
+  }
+
+
+// Ejemplo de uso:
+console.log(rota1([3, 2, 5, 7])); // [2, 5, 7, 3]
+console.log(rota1([]));           // []
+console.log(rota1([1]));          // [1]
+console.log(rota1([1, 2]));       // [2, 1]
