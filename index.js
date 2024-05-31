@@ -90,8 +90,8 @@ const xor4 = (bol1, bol2) => bol1 != bol2
     Por ejemplo, rota1 [3,2,5,7] == [2,5,7,3]
 */
 
-function rota1 (xs) {
-    if (xs.length === 0) {
+const rota1 = (xs) => {
+    if (xs.length === 0) {//
       return xs; 
     }
 
@@ -99,9 +99,30 @@ function rota1 (xs) {
     return [...restOfElements, firstElement];
   }
 
+/*
+    Ejercicio 1.8.2. Definir la función rota tal que (rota n xs) es la lista obtenida poniendo los
+    n primeros elementos de xs al final de la lista. Por ejemplo,
 
-// Ejemplo de uso:
-console.log(rota1([3, 2, 5, 7])); // [2, 5, 7, 3]
-console.log(rota1([]));           // []
-console.log(rota1([1]));          // [1]
-console.log(rota1([1, 2]));       // [2, 1]
+    rota 1 [3,2,5,7] == [2,5,7,3]
+    rota 2 [3,2,5,7] == [5,7,3,2]
+    rota 3 [3,2,5,7] == [7,3,2,5]
+*/
+
+const rota = (n, xs) => {
+    if (xs.length === 0) {
+      return xs;
+    }
+
+    const elementsToMove = xs.slice(0, n);
+    const restOfElements = xs.slice(n);
+    return [...restOfElements, ...elementsToMove];
+}
+
+/*
+    Ejercicio 1.9.1. Definir la función rango tal que (rango xs) es la lista formada por el menor
+    y mayor elemento de xs. Por ejemplo,
+    rango [3,2,7,5] == [2,7]
+    Indicación: Se pueden usar minimum y maximum.
+*/
+
+export{ media3, sumaMonedas, volumenEsfera, areaDeCoronaCircular, ultimaCifra, maxTres, xor1, xor2, xor3, xor4, rota1, rota }
