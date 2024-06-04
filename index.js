@@ -125,4 +125,28 @@ const rota = (n, xs) => {
     Indicación: Se pueden usar minimum y maximum.
 */
 
-export{ media3, sumaMonedas, volumenEsfera, areaDeCoronaCircular, ultimaCifra, maxTres, xor1, xor2, xor3, xor4, rota1, rota }
+const rango = (xs) => [Math.min(...xs), Math.max(...xs)]
+
+/*
+    Ejercicio 1.10.1. Definir la función palindromo tal que (palindromo xs) se verifica si xs es
+    un palíndromo; es decir, es lo mismo leer xs de izquierda a derecha que de derecha a izquierda.
+    Por ejemplo,
+
+    palindromo [3,2,5,2,3] == True
+    palindromo [3,2,5,6,2,3] == False
+*/
+
+const palindromo = (xs) => console.log(xs.join('') === xs.reverse().join(''))
+
+/*
+    1.11. Elementos interiores de una lista
+    Ejercicio 1.11.1. Definir la función interior tal que (interior xs) es la lista obtenida eliminando
+    los extremos de la lista xs. Por ejemplo,
+    interior [2,5,3,7,3] == [5,3,7]
+    interior [2..7] == [3,4,5,6]    
+*/
+
+const interior = (xs) => xs.slice(1, xs.length - 1);
+
+export{ media3, sumaMonedas, volumenEsfera, areaDeCoronaCircular, ultimaCifra, maxTres, xor1, xor2, xor3, xor4, rota1, 
+        rango, interior, palindromo, rota }
